@@ -1,0 +1,9 @@
+assistance_config:
+  sim: True
+  max_linear_velocity: None
+  max_angular_velocity: None
+  goal_objects: [kinova_holder]
+  record_data: False
+  log_dir: None
+  enable_vis: True
+logging: True

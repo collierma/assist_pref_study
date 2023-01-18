@@ -1,0 +1,13 @@
+objects:
+  kinova_holder:
+    model_name: kinova_holder
+    pose: [0.542, 0.1077, 0.02,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://models/kinova_holder
+  ground_plane:
+    model_name: ground_plane
+    pose: [0.0, 0.0, 0.0,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://ground_plane

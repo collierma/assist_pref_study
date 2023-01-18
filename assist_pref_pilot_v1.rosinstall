@@ -1,0 +1,27 @@
+- git:
+    local-name: assist_pref_grasp_demo
+    uri: git@github.com:HARPLab/assist_pref_grasp_demo.git
+    version: pilot_study_v1
+- git:
+    local-name: harp_arm_py
+    uri: git@github.com:HARPLab/harp_arm_py.git
+    version: pilot_study_v1
+- git:
+    local-name: harp_arm_study_utils
+    uri: git@github.com:HARPLab/harp_arm_study_utils.git
+- git:
+    local-name: quartet
+    uri: git@github.com:HARPLab/quartet.git
+    version: pilot_study_v1
+- git:
+    local-name: quartet_shared_control
+    uri: git@github.com:HARPLab/quartet_shared_control.git
+    version: pilot_study_v1
+- git:
+    local-name: quartet_teleop
+    uri: git@github.com:HARPLab/quartet_teleop.git
+    version: pilot_study_v1
+- git:
+    local-name: ros_kortex
+    uri: git@github.com:HARPLab/ros_kortex.git
+    version: pilot_study_v1

@@ -1,0 +1,25 @@
+objects:
+  cafe_table:
+    model_name: cafe_table
+    pose: [0.385819, 0.0, -0.774705,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://models/cafe_table
+  mug1:
+    model_name: mug
+    pose: [0.542, 0.1077, 0.0744,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://models/mug
+  mug2:
+    model_name: mug
+    pose: [0.5098,-0.2728, 0.0604,
+           0.0 ,0.0, 0.0]
+    frame: world
+    model_uri: model://models/mug
+  ground_plane:
+    model_name: ground_plane
+    pose: [0.0, 0.0, -0.855,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://ground_plane

@@ -1,0 +1,5 @@
+kinova_holder:
+  offsets: 
+    - [-0.0413,0.,0.]
+  orientation: 
+    - [90.,0.,90.]

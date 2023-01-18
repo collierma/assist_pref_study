@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>assist_pref_grasp_demo</name>
+  <version>1.0.0</version>
+  <description>The assist_pref_grasp_demo package</description>
+  <maintainer email="macollie@andrew.cmu.edu">Maggie Collier</maintainer>
+  <license>BSD</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>harp_py</depend>
+  <depend>quartet_py</depend>
+  <depend>gazebo_ros</depend>
+
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+    <architecture_independent />
+  </export>
+</package>

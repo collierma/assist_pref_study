@@ -1,0 +1,6 @@
+<launch>
+    <arg name="robot_name" default="my_gen3"/>
+
+        
+    <node pkg="assist_pref_grasp_demo" name="test_assist_pref_grasp_demo" type="test.py" ns="$(arg robot_name)" output="screen"/>
+</launch>

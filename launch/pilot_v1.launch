@@ -1,0 +1,14 @@
+<launch>
+    <arg name="robot_name" default="my_gen3"/>
+    
+    <arg name="config_file" default="$(find assist_pref_grasp_demo)/configs/pilot_v1.yaml"/>
+
+    <rosparam command="load" file="$(find assist_pref_grasp_demo)/configs/pilot_v1.yaml" subst_value="true"/>
+
+    <include file="$(find assist_pref_grasp_demo)/launch/study.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="study_version_name" value="study_v1"/>
+        <arg name="config_file" value="$(arg config_file)"/>
+    </include>
+
+</launch>

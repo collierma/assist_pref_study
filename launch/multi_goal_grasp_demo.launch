@@ -1,0 +1,20 @@
+<launch>
+    <rosparam>
+        kinova_joy_node/autorepeat_rate: 100
+    </rosparam>
+    <node pkg="joy" output="screen" type="joy_node" name="kinova_joy_node" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+    </node>
+    
+    <arg name="robot_name" default="my_gen3"/>
+    
+    <arg name="input_interface" default="generic_joystick"/>
+    <arg name="joy_dofs" default="3"/>
+    <arg name="joy_topic" default="arbitration_joy"/>
+
+    <include file="$(find shared_control)/launch/arbitration_input_publisher.launch" />
+
+
+        
+    <node pkg="assist_pref_grasp_demo" name="grasp_demo" type="run_assist_pref_grasp_demo.py" ns="$(arg robot_name)" output="screen" args="$(arg input_interface) --num-input-dofs $(arg joy_dofs)"/>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+    <arg name="robot_name" default="my_gen3"/>
+    <arg name="study_version_name" default="study"/>
+    <arg name="config_file" default=""/>
+
+
+        
+    <node pkg="assist_pref_grasp_demo" name="$(arg study_version_name)" type="run_$(arg study_version_name).py" ns="$(arg robot_name)" output="screen" args="--config-file $(arg config_file) "/>
+</launch>

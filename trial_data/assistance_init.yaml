@@ -1,0 +1,127 @@
+assistance_config:
+  enable_vis: true
+  goal_objects:
+  - kinova_holder
+  log_dir: None
+  max_angular_velocity: None
+  max_linear_velocity: None
+  record_data: false
+  sim: true
+assistance_data:
+  0:
+  - 0.4
+  - 1.0
+  - 0.0
+  1:
+  - 0.4
+  - 0.8
+  - 0.6
+  2:
+  - 0.4
+  - 0.65
+  - 0.75
+  3:
+  - 0.4
+  - 0.55
+  - 0.9
+  4:
+  - 0.4
+  - 0.4
+  - 1.0
+goals:
+- - kinova_holder
+  - - - 1.0
+      - 0.0
+      - 0.0
+      - 0.542
+    - - 0.0
+      - 1.0
+      - 0.0
+      - 0.1077
+    - - 0.0
+      - 0.0
+      - 1.0
+      - 0.0053975
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+input_control_paradigm_map:
+  buttons:
+    next_mode: right_button
+  mode0:
+    x: left_right
+    y: up_down
+    z: twist
+  mode1:
+    pitch: left_right
+    roll: up_down
+    yaw: twist
+input_interface_map:
+  axes:
+    left_right: 1
+    twist: 2
+    up_down: 0
+  buttons:
+    left_button: 0
+    right_button: 1
+input_interfaces:
+  arb:
+    axes_map: {}
+    buttons_map:
+      down: 1
+      up: 0
+    interface: up_down_keyboard_keys
+  joy:
+    axes_map:
+      left_right: 1
+      twist: 2
+      up_down: 0
+    buttons_map:
+      left_button: 0
+      right_button: 1
+    interface: generic_joystick
+input_mapper:
+  control_map:
+    down: decrease_assist
+    up: increase_assist
+  input_profile:
+    0:
+    - - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    - - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+    1:
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+    - - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+  num_modes: 2

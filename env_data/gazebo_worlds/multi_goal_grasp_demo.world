@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+      <name>ground_plane</name>
+      <pose>0 0 -0.855 0 0 0</pose>
+    </include>
+    
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -1 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light> 
+    <include>
+      <uri>model://cafe_table</uri>
+      <pose frame=''>0.385819 0 -0.774705 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://models/mug</uri>
+      <name>mug1</name>
+      <pose frame=''>0.67931 -0.22868 -0.005284 0 0 0.784713</pose>
+    </include>
+    <include>
+      <uri>model://models/mug</uri>
+      <name>mug2</name>
+      <pose frame=''>0.52367 0.29808 -0.005257 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

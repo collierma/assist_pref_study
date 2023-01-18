@@ -1,0 +1,40 @@
+<launch>
+    <rosparam>
+        kinova_joy_node/autorepeat_rate: 100
+    </rosparam>
+    <node pkg="joy" output="screen" type="joy_node" name="kinova_joy_node" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+    </node>
+    
+    <arg name="robot_name" default="my_gen3"/>
+    
+    <arg name="input_interface" default="generic_joystick"/>
+    <arg name="joy_dofs" default="3"/>
+
+    <arg name="joy_topic" default="arbitration_joy"/>
+
+    <include file="$(find shared_control)/launch/arbitration_input_publisher.launch" />
+
+    <!-- <include file="$(find shared_control)/launch/arbitration_function_plotter.launch" /> -->
+
+    <arg name="world_name" default="$(find assist_pref_grasp_demo)/env_data/gazebo_worlds/multi_goal_grasp_demo.world"/> 
+
+    <!-- Gazebo parameters -->
+    <arg name="use_sim_time" default="true"/>
+    <arg name="debug" default="false" />
+    <arg name="paused" default="true"/>
+    <arg name="gazebo_gui" default="true" />
+
+    <!-- Start Gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+            <arg name="gui" value="$(arg gazebo_gui)"/>
+            <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+            <arg name="debug" value="$(arg debug)"/>
+            <arg name="paused" value="$(arg paused)"/>
+            <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+
+
+        
+    <node pkg="assist_pref_grasp_demo" name="grasp_demo" type="run_assist_pref_grasp_demo.py" ns="$(arg robot_name)" output="screen" args="$(arg input_interface) --num-input-dofs $(arg joy_dofs) --sim"/>
+</launch>

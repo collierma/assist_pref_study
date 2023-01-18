@@ -1,0 +1,1563 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 -0.855 0 -0 0</pose>
+    </model>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -1 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='cafe_table'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='surface'>
+          <pose frame=''>0 0 0.755 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.913 0.913 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='column'>
+          <pose frame=''>0 0 0.37 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.042 0.042 0.74</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose frame=''>0 0 0.02 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.56 0.56 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.15 0 -0.85 0 -0 0</pose>
+    </model>
+    <model name='mug1'>
+      <pose frame=''>0.4 0.3 -0.081 0 -0 0.785</pose>
+      <static>0</static>
+      <link name='mug_base'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://models/mug/mesh/nontextured.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://models/mug/mesh/nontextured.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='mug2'>
+      <pose frame=''>0.4 -0.3 -0.081 0 -0 0</pose>
+      <static>0</static>
+      <link name='mug_base'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://models/mug/mesh/nontextured.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://models/mug/mesh/nontextured.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='my_gen3'>
+      <link name='base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.000648 -0.000166 0.084487 0 -0 0</pose>
+          <mass>1.697</mass>
+          <inertia>
+            <ixx>0.004622</ixx>
+            <ixy>9e-06</ixy>
+            <ixz>6e-05</ixz>
+            <iyy>0.004495</iyy>
+            <iyz>9e-06</iyz>
+            <izz>0.002079</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='world_to_root' type='fixed'>
+        <child>base_link</child>
+        <parent>world</parent>
+      </joint>
+      <link name='shoulder_link'>
+        <pose frame=''>0 0 0.15643 -3.14159 0 0</pose>
+        <inertial>
+          <pose frame=''>-2.3e-05 -0.010364 -0.07336 0 -0 0</pose>
+          <mass>1.3773</mass>
+          <inertia>
+            <ixx>0.00457</ixx>
+            <ixy>1e-06</ixy>
+            <ixz>2e-06</ixz>
+            <iyy>0.004831</iyy>
+            <iyz>0.000448</iyz>
+            <izz>0.001409</izz>
+          </inertia>
+        </inertial>
+        <collision name='shoulder_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/shoulder_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='shoulder_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/shoulder_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_1' type='revolute'>
+        <child>shoulder_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>-0 7e-06 -1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='half_arm_1_link'>
+        <pose frame=''>0 -0.005376 0.28481 -1.57079 -0 0</pose>
+        <inertial>
+          <pose frame=''>-4.4e-05 -0.09958 -0.013278 0 -0 0</pose>
+          <mass>1.1636</mass>
+          <inertia>
+            <ixx>0.011088</ixx>
+            <ixy>5e-06</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001072</iyy>
+            <iyz>-0.000691</iyz>
+            <izz>0.011255</izz>
+          </inertia>
+        </inertial>
+        <collision name='half_arm_1_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/half_arm_1_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='half_arm_1_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/half_arm_1_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_2' type='revolute'>
+        <child>half_arm_1_link</child>
+        <parent>shoulder_link</parent>
+        <axis>
+          <xyz>-0 1 1.1e-05</xyz>
+          <limit>
+            <lower>-2.41</lower>
+            <upper>2.41</upper>
+            <effort>39</effort>
+            <velocity>1.3963</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='half_arm_2_link'>
+        <pose frame=''>-0 -0.011753 0.49519 -3.14159 -0 0</pose>
+        <inertial>
+          <pose frame=''>-4.4e-05 -0.006641 -0.117892 0 -0 0</pose>
+          <mass>1.1636</mass>
+          <inertia>
+            <ixx>0.010932</ixx>
+            <ixy>0</ixy>
+            <ixz>-7e-06</ixz>
+            <iyy>0.011127</iyy>
+            <iyz>0.000606</iyz>
+            <izz>0.001043</izz>
+          </inertia>
+        </inertial>
+        <collision name='half_arm_2_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/half_arm_2_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='half_arm_2_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/half_arm_2_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_3' type='revolute'>
+        <child>half_arm_2_link</child>
+        <parent>half_arm_1_link</parent>
+        <axis>
+          <xyz>0 7e-06 -1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='forearm_link'>
+        <pose frame=''>-0 -0.01813 0.70557 -1.57079 -0 0</pose>
+        <inertial>
+          <pose frame=''>-1.8e-05 -0.075478 -0.015006 0 -0 0</pose>
+          <mass>0.9302</mass>
+          <inertia>
+            <ixx>0.008147</ixx>
+            <ixy>-1e-06</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000631</iyy>
+            <iyz>-0.0005</iyz>
+            <izz>0.008316</izz>
+          </inertia>
+        </inertial>
+        <collision name='forearm_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/forearm_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='forearm_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/forearm_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_4' type='revolute'>
+        <child>forearm_link</child>
+        <parent>half_arm_2_link</parent>
+        <axis>
+          <xyz>-0 1 1.1e-05</xyz>
+          <limit>
+            <lower>-2.66</lower>
+            <upper>2.66</upper>
+            <effort>39</effort>
+            <velocity>1.3963</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='spherical_wrist_1_link'>
+        <pose frame=''>-0 -0.024507 0.914 -3.14159 -0 0</pose>
+        <inertial>
+          <pose frame=''>1e-06 -0.009432 -0.063883 0 -0 0</pose>
+          <mass>0.6781</mass>
+          <inertia>
+            <ixx>0.001596</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001607</iyy>
+            <iyz>0.000256</iyz>
+            <izz>0.000399</izz>
+          </inertia>
+        </inertial>
+        <collision name='spherical_wrist_1_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_1_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='spherical_wrist_1_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_1_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_5' type='revolute'>
+        <child>spherical_wrist_1_link</child>
+        <parent>forearm_link</parent>
+        <axis>
+          <xyz>0 7e-06 -1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='spherical_wrist_2_link'>
+        <pose frame=''>-0 -0.024683 1.01993 -1.57079 -0 0</pose>
+        <inertial>
+          <pose frame=''>1e-06 -0.045483 -0.00965 0 -0 0</pose>
+          <mass>0.6781</mass>
+          <inertia>
+            <ixx>0.001641</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00041</iyy>
+            <iyz>-0.000278</iyz>
+            <izz>0.001641</izz>
+          </inertia>
+        </inertial>
+        <collision name='spherical_wrist_2_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_2_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='spherical_wrist_2_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/spherical_wrist_2_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_6' type='revolute'>
+        <child>spherical_wrist_2_link</child>
+        <parent>spherical_wrist_1_link</parent>
+        <axis>
+          <xyz>-0 1 1.1e-05</xyz>
+          <limit>
+            <lower>-2.23</lower>
+            <upper>2.23</upper>
+            <effort>9</effort>
+            <velocity>1.2218</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='bracelet_link'>
+        <pose frame=''>-0 -0.024859 1.12586 -3.14159 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.000195 0.007847 -0.049496 0 -0 0</pose>
+          <mass>0.72652</mass>
+          <inertia>
+            <ixx>0.00140781</ixx>
+            <ixy>2.49107e-06</ixy>
+            <ixz>2.43936e-07</ixz>
+            <iyy>0.00119129</iyy>
+            <iyz>-0.000230298</iyz>
+            <izz>0.000764059</izz>
+          </inertia>
+        </inertial>
+        <collision name='bracelet_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/bracelet_with_vision_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='bracelet_link_fixed_joint_lump__robotiq_arg2f_base_link_collision_1'>
+          <pose frame=''>0 0 -0.061525 3.14159 -0 -1.57</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='bracelet_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/arms/gen3/7dof/meshes/bracelet_with_vision_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='bracelet_link_fixed_joint_lump__robotiq_arg2f_base_link_visual_1'>
+          <pose frame=''>0 0 -0.061525 3.14159 -0 -1.57</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_7' type='revolute'>
+        <child>bracelet_link</child>
+        <parent>spherical_wrist_2_link</parent>
+        <axis>
+          <xyz>0 7e-06 -1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='left_outer_knuckle'>
+        <pose frame=''>0.030601 -0.024884 1.24229 0 7e-06 -1.57159</pose>
+        <inertial>
+          <pose frame=''>0.000164 0.055483 -0.010076 0 -0 0</pose>
+          <mass>0.0311462</mass>
+          <inertia>
+            <ixx>5.1136e-05</ixx>
+            <ixy>-1.50984e-07</ixy>
+            <ixz>1.67498e-07</ixz>
+            <iyy>2.6195e-05</iyy>
+            <iyz>2.19801e-05</iyz>
+            <izz>2.77118e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_outer_knuckle_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left_outer_knuckle_fixed_joint_lump__left_outer_finger_collision_1'>
+          <pose frame=''>0 0.0315 -0.0041 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_finger.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='left_outer_knuckle_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='left_outer_knuckle_fixed_joint_lump__left_outer_finger_visual_1'>
+          <pose frame=''>0 0.0315 -0.0041 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='finger_joint' type='revolute'>
+        <child>left_outer_knuckle</child>
+        <parent>bracelet_link</parent>
+        <axis>
+          <xyz>-0.000796 -1 -7e-06</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.8</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='left_inner_finger'>
+        <pose frame=''>0.068201 -0.024915 1.28529 0 7e-06 -1.57159</pose>
+        <inertial>
+          <pose frame=''>0.0003 0.016008 -0.013695 0 -0 0</pose>
+          <mass>0.0104003</mass>
+          <inertia>
+            <ixx>2.71909e-06</ixx>
+            <ixy>1.35402e-21</ixy>
+            <ixz>-7.18173e-22</ixz>
+            <iyy>7.691e-07</iyy>
+            <iyz>6.74715e-07</iyz>
+            <izz>2.30315e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_inner_finger_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_finger.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='left_inner_finger_pad_collision_1'>
+          <pose frame=''>0 -0.02202 0.03242 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.022 0.00635 0.0375</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='left_inner_finger_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='left_inner_finger_pad_visual_1'>
+          <pose frame=''>0 -0.02202 0.03242 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.022 0.00635 0.0375</size>
+            </box>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_inner_finger_joint' type='revolute'>
+        <child>left_inner_finger</child>
+        <parent>left_outer_knuckle</parent>
+        <axis>
+          <xyz>-0.000796 -1 -7e-06</xyz>
+          <limit>
+            <lower>-0.8757</lower>
+            <upper>0.8757</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='left_inner_knuckle'>
+        <pose frame=''>0.0127 -0.02487 1.2488 0 7e-06 -1.57159</pose>
+        <inertial>
+          <pose frame=''>0.000123 0.050785 0.00104 0 -0 0</pose>
+          <mass>0.0271177</mass>
+          <inertia>
+            <ixx>2.6191e-05</ixx>
+            <ixy>-2.43617e-07</ixy>
+            <ixz>-6.3779e-09</ixz>
+            <iyy>2.82702e-06</iyy>
+            <iyz>-5.37201e-07</iyz>
+            <izz>2.83696e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_inner_knuckle_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='left_inner_knuckle_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_inner_knuckle_joint' type='revolute'>
+        <child>left_inner_knuckle</child>
+        <parent>bracelet_link</parent>
+        <axis>
+          <xyz>-0.000796 -1 -7e-06</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.8757</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='right_inner_knuckle'>
+        <pose frame=''>-0.0127 -0.02485 1.2488 -0 -7e-06 1.57</pose>
+        <inertial>
+          <pose frame=''>0.000123 0.050785 0.00104 0 -0 0</pose>
+          <mass>0.0271177</mass>
+          <inertia>
+            <ixx>2.6191e-05</ixx>
+            <ixy>-2.43617e-07</ixy>
+            <ixz>-6.3779e-09</ixz>
+            <iyy>2.82702e-06</iyy>
+            <iyz>-5.37201e-07</iyz>
+            <izz>2.83696e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_inner_knuckle_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_inner_knuckle_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_inner_knuckle_joint' type='revolute'>
+        <child>right_inner_knuckle</child>
+        <parent>bracelet_link</parent>
+        <axis>
+          <xyz>0.000796 1 7e-06</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.8757</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='right_outer_knuckle'>
+        <pose frame=''>-0.030601 -0.024836 1.24229 -0 -7e-06 1.57</pose>
+        <inertial>
+          <pose frame=''>0.000164 0.055483 -0.010076 0 -0 0</pose>
+          <mass>0.0311462</mass>
+          <inertia>
+            <ixx>5.1136e-05</ixx>
+            <ixy>-1.50984e-07</ixy>
+            <ixz>1.67498e-07</ixz>
+            <iyy>2.6195e-05</iyy>
+            <iyz>2.19801e-05</iyz>
+            <izz>2.77118e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_outer_knuckle_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right_outer_knuckle_fixed_joint_lump__right_outer_finger_collision_1'>
+          <pose frame=''>0 0.0315 -0.0041 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_finger.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_outer_knuckle_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='right_outer_knuckle_fixed_joint_lump__right_outer_finger_visual_1'>
+          <pose frame=''>0 0.0315 -0.0041 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_outer_knuckle_joint' type='revolute'>
+        <child>right_outer_knuckle</child>
+        <parent>bracelet_link</parent>
+        <axis>
+          <xyz>0.000796 1 7e-06</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.81</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='right_inner_finger'>
+        <pose frame=''>-0.068201 -0.024806 1.28529 -0 -7e-06 1.57</pose>
+        <inertial>
+          <pose frame=''>0.0003 0.016008 -0.013695 0 -0 0</pose>
+          <mass>0.0104003</mass>
+          <inertia>
+            <ixx>2.71909e-06</ixx>
+            <ixy>1.35402e-21</ixy>
+            <ixz>-7.18173e-22</ixz>
+            <iyy>7.691e-07</iyy>
+            <iyz>6.74715e-07</iyz>
+            <izz>2.30315e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_inner_finger_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_finger.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='right_inner_finger_pad_collision_1'>
+          <pose frame=''>0 -0.02202 0.03242 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.022 0.00635 0.0375</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_inner_finger_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/maggie/arm_workspace/src/ros_kortex/kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_finger.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='right_inner_finger_pad_visual_1'>
+          <pose frame=''>0 -0.02202 0.03242 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.022 0.00635 0.0375</size>
+            </box>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_inner_finger_joint' type='revolute'>
+        <child>right_inner_finger</child>
+        <parent>right_outer_knuckle</parent>
+        <axis>
+          <xyz>0.000796 1 7e-06</xyz>
+          <limit>
+            <lower>-0.8757</lower>
+            <upper>0.8757</upper>
+            <effort>1000</effort>
+            <velocity>2</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <plugin name='mimic_robotiq_85_1' filename='libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so'>
+        <joint>finger_joint</joint>
+        <mimicJoint>right_outer_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <hasPID/>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <plugin name='mimic_robotiq_85_2' filename='libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so'>
+        <joint>finger_joint</joint>
+        <mimicJoint>right_inner_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <hasPID/>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <plugin name='mimic_robotiq_85_3' filename='libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so'>
+        <joint>finger_joint</joint>
+        <mimicJoint>left_inner_knuckle_joint</mimicJoint>
+        <multiplier>1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <hasPID/>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <plugin name='mimic_robotiq_85_4' filename='libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so'>
+        <joint>finger_joint</joint>
+        <mimicJoint>left_inner_finger_joint</mimicJoint>
+        <multiplier>-1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <hasPID/>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <plugin name='mimic_robotiq_85_5' filename='libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so'>
+        <joint>finger_joint</joint>
+        <mimicJoint>right_inner_finger_joint</mimicJoint>
+        <multiplier>-1.0</multiplier>
+        <offset>0.0</offset>
+        <maxEffort>5.0</maxEffort>
+        <hasPID/>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <plugin name='gazebo_grasp_fix' filename='libgazebo_grasp_fix.so'>
+        <arm>
+          <arm_name>my_robotiq_gripper</arm_name>
+          <palm_link>bracelet_link</palm_link>
+          <gripper_link>left_inner_finger</gripper_link>
+          <gripper_link>right_inner_finger</gripper_link>
+        </arm>
+        <forces_angle_tolerance>100</forces_angle_tolerance>
+        <update_rate>10</update_rate>
+        <grip_count_threshold>3</grip_count_threshold>
+        <max_grip_count>10</max_grip_count>
+        <release_tolerance>0.001</release_tolerance>
+        <disable_collisions_on_attach>0</disable_collisions_on_attach>
+        <contact_topic>__default_topic__</contact_topic>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <legacyModeNS>1</legacyModeNS>
+        <robotNamespace>my_gen3</robotNamespace>
+      </plugin>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>55 174000000</sim_time>
+      <real_time>50 769005879</real_time>
+      <wall_time>1636172437 152105006</wall_time>
+      <iterations>46739</iterations>
+      <model name='cafe_table'>
+        <pose frame=''>0.385819 0 -0.774705 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.385819 0 -0.774705 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 -0.855 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 -0.855 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mug1'>
+        <pose frame=''>0.400014 0.299952 -0.005284 -0.008156 0.004214 0.784713</pose>
+        <scale>1 1 1</scale>
+        <link name='mug_base'>
+          <pose frame=''>0.400014 0.299952 -0.005284 -0.008156 0.004214 0.784713</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mug2'>
+        <pose frame=''>0.399974 -0.300046 -0.005257 -0.008632 0.004466 -0.000289</pose>
+        <scale>1 1 1</scale>
+        <link name='mug_base'>
+          <pose frame=''>0.399974 -0.300046 -0.005257 -0.008632 0.004466 -0.000289</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.6e-05 0.00223 -0.01417 0.371375 0.018799 -4e-06</acceleration>
+          <wrench>-1.6e-05 0.00223 -0.01417 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='my_gen3'>
+        <pose frame=''>4e-06 2.1e-05 0.000254 0.000216 -0.000205 0.000106</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>4e-06 2.1e-05 0.000254 0.000216 -0.000205 0.000106</pose>
+          <velocity>-0.002056 -0.004642 -0.063389 -0.045917 0.065601 -0.026475</velocity>
+          <acceleration>14.9944 -2.50346 -82.0525 -0.087258 1.1714 -1.10919</acceleration>
+          <wrench>25.4454 -4.24837 -139.243 0 -0 0</wrench>
+        </link>
+        <link name='bracelet_link'>
+          <pose frame=''>0.275009 0.001789 0.345123 -1.18286 -0.001382 1.57244</pose>
+          <velocity>0.014127 0.005648 -0.013677 0.082733 -0.306171 -0.03703</velocity>
+          <acceleration>46.6119 1.46158 -37.9251 2.81008 -0.559896 -2.7596</acceleration>
+          <wrench>33.8645 1.06187 -27.5533 0 -0 0</wrench>
+        </link>
+        <link name='forearm_link'>
+          <pose frame=''>0.107589 -0.005508 0.6918 1.57155 -0.222548 0.001734</pose>
+          <velocity>-0.032423 -0.016763 -0.051539 0.06818 -0.137299 0.033475</velocity>
+          <acceleration>-18.0523 -3.95868 -40.3882 0.902628 0.91508 -2.9126</acceleration>
+          <wrench>-16.7923 -3.68236 -37.5691 0 -0 0</wrench>
+        </link>
+        <link name='half_arm_1_link'>
+          <pose frame=''>-0.000116 -0.005406 0.285062 -1.57063 0.258898 -0.000337</pose>
+          <velocity>0.017608 0.012154 -0.06341 -0.067335 -0.110248 -0.531588</velocity>
+          <acceleration>68.4321 -5.62652 -74.0926 -1.63413 -0.461616 1.16441</acceleration>
+          <wrench>79.6276 -6.54702 -86.2141 0 -0 0</wrench>
+        </link>
+        <link name='half_arm_2_link'>
+          <pose frame=''>0.053742 -0.011833 0.488429 3.14081 -0.258901 -3.13953</pose>
+          <velocity>-0.007728 -0.002281 -0.05738 0.073565 -0.10949 0.009742</velocity>
+          <acceleration>-7.49917 -5.76497 -54.0185 -2.86456 -0.404797 3.01764</acceleration>
+          <wrench>-8.72603 -6.70812 -62.8559 0 -0 0</wrench>
+        </link>
+        <link name='left_inner_finger'>
+          <pose frame=''>0.422554 0.070197 0.284819 -3.14056 1.18277 -3.14117</pose>
+          <velocity>-0.013454 0.064971 0.05796 0.959528 -0.275766 2.1242</velocity>
+          <acceleration>-6.03536 15.9039 -25.0919 -2.69467 0.726246 -2.87083</acceleration>
+          <wrench>-0.06277 0.165405 -0.260963 0 -0 0</wrench>
+        </link>
+        <link name='left_inner_knuckle'>
+          <pose frame=''>0.388789 0.01474 0.298626 -3.13733 1.18287 -3.14122</pose>
+          <velocity>0.028808 0.00543 0.022855 0.772414 -0.31006 1.65657</velocity>
+          <acceleration>-9.25584 2.62986 -22.2263 1.16184 0.092805 -1.6977</acceleration>
+          <wrench>-0.250997 0.071316 -0.602725 0 -0 0</wrench>
+        </link>
+        <link name='left_outer_knuckle'>
+          <pose frame=''>0.382728 0.032628 0.301104 -3.1405 1.18278 -3.14119</pose>
+          <velocity>0.028597 0.005407 0.023538 0.605993 -0.285394 1.24307</velocity>
+          <acceleration>3.92331 -6.85865 -24.8731 -1.54204 -0.734427 2.09193</acceleration>
+          <wrench>0.122196 -0.213621 -0.774702 0 -0 0</wrench>
+        </link>
+        <link name='right_inner_finger'>
+          <pose frame=''>0.423105 -0.065606 0.284614 -3.12997 -1.18276 0.000289</pose>
+          <velocity>0.012989 -0.015871 0.034254 -0.013296 -0.28061 -0.285608</velocity>
+          <acceleration>-12.0358 -24.2887 -22.6776 3.05766 -1.35829 -2.73243</acceleration>
+          <wrench>-0.125176 -0.25261 -0.235854 0 -0 0</wrench>
+        </link>
+        <link name='right_inner_knuckle'>
+          <pose frame=''>0.388838 -0.01066 0.29861 -3.13273 -1.18287 0.000359</pose>
+          <velocity>0.027863 0.005182 0.020746 -0.492361 -0.310914 -1.44532</velocity>
+          <acceleration>-15.8957 -0.899157 -19.5939 -1.6105 0.806473 2.6641</acceleration>
+          <wrench>-0.431054 -0.024383 -0.531341 0 -0 0</wrench>
+        </link>
+        <link name='right_outer_knuckle'>
+          <pose frame=''>0.382847 -0.028574 0.301064 -3.12873 -1.18276 0.00029</pose>
+          <velocity>0.026538 0.005291 0.018523 -0.094784 -0.276756 -0.49036</velocity>
+          <acceleration>-7.27632 10.6215 -20.6894 0.42988 0.489652 1.39008</acceleration>
+          <wrench>-0.22663 0.330821 -0.644398 0 -0 0</wrench>
+        </link>
+        <link name='shoulder_link'>
+          <pose frame=''>-4.5e-05 -9e-06 0.156683 -3.14141 -0.000524 -0.000366</pose>
+          <velocity>0.008225 0.004009 -0.0637 -0.057669 0.101297 -0.525485</velocity>
+          <acceleration>73.2968 -4.19932 -82.0739 1.67411 -0.712574 1.28209</acceleration>
+          <wrench>100.952 -5.78372 -113.04 0 -0 0</wrench>
+        </link>
+        <link name='spherical_wrist_1_link'>
+          <pose frame=''>0.153575 0.001103 0.488513 0.000746 -0.222535 0.001732</pose>
+          <velocity>-0.009315 -0.001745 -0.046121 0.084592 -0.12732 -0.044156</velocity>
+          <acceleration>41.2891 1.03839 -27.6301 -3.13066 -0.154202 1.55549</acceleration>
+          <wrench>27.9981 0.704135 -18.736 0 -0 0</wrench>
+        </link>
+        <link name='spherical_wrist_2_link'>
+          <pose frame=''>0.176952 0.001398 0.385195 1.57273 -1.18285 0.000111</pose>
+          <velocity>0.002627 0.005924 -0.043459 0.084704 -0.301943 -0.036495</velocity>
+          <acceleration>52.0845 1.96287 -28.3204 0.970653 -1.54084 -2.6767</acceleration>
+          <wrench>35.3185 1.33102 -19.2041 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -1 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2.99131 -2.45049 1.0402 0 0.275643 2.3562</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

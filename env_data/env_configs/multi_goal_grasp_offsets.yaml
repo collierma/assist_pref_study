@@ -1,0 +1,10 @@
+mug1:
+  offsets: 
+    - [0.,0.,0.]
+  orientation: 
+    - [90.,0.,90.]
+mug2:
+  offsets:
+    - [0.,0.,0.]
+  orientation:
+    - [90.,0.,90.]

@@ -1,0 +1,19 @@
+objects:
+  cafe_table:
+    model_name: cafe_table
+    pose: [0.385819, 0.0, -0.755,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://models/cafe_table
+  kinova_holder:
+    model_name: kinova_holder
+    pose: [0.542, 0.1077, 0.0053975,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://models/kinova_holder
+  ground_plane:
+    model_name: ground_plane
+    pose: [0.0, 0.0, -0.755,
+           0.0, 0.0, 0.0]
+    frame: world
+    model_uri: model://ground_plane
