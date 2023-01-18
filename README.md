@@ -1,5 +1,7 @@
 This is a public copy of a private repo in the HARPLab Github. I'm making a public copy since I'm applying for internships. Cut me some slack y'all, practically all my code is in private repos in different organizations' Github profiles.
 
+If you're here to see if I can code and document things, here's a [sample](https://github.com/collierma/assist_pref_study/blob/main/scripts/run_study_v1.py) of my stuff.
+
 Also, plz hire me <3
 
 

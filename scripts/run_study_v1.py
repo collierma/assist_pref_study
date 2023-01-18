@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-NUMPY DOCSTRINGS REFERENCE GUIDE: https://numpydoc.readthedocs.io/en/latest/format.html#documenting-classes
-
-"""
-
 import rospy,rospkg
 import argparse
 from collections import namedtuple
